@@ -1,0 +1,12 @@
+# The main pipeline for learnadb
+resources:
+  pipelines:
+    learnadb_pipeline:
+      name: learnadb_pipeline
+      target: learnadb_${bundle.environment}
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb
+
+      configuration:
+        bundle.sourcePath: /Workspace/${workspace.file_path}/src
